@@ -1,0 +1,20 @@
+(0) netcat 127.0.0.1 8080
+(1) entendido -> lo dice la consigna
+(2) itba -> https://medium.com/@jordanne_76409/how-the-wire-taught-me-encryption-131265bbc0c
+(3) M4GFKZ289aku -> paint: pintar el fondo
+(4) fk3wfLCm3QvS -> strace para ver en que fd escribe y despues correr "./server 13> out.txt" y observar la salida
+    https://noviello.it/es/como-redirigir-stderr-a-stdout-en-un-archivo-con-bash-en-linux/
+(5) too_easy -> correr "strings ./server> strings.txt" e ir a la linea 277.
+Con esto tambien encontramos un easter egg en la linea 95:
+ _______________________
+< ESTO ES UN EASTER_EGG >
+ -----------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+(6) .RUN_ME -> correr "objdump ./server -D> objdump.txt" para un Disassembly completo o "objdump ./server -h> objdump.txt" para ver los headers y ver que section esta despues de .comment
+(7) K5n2UFfpFMUN -> correr "./server 2> filtererror.txt" para redirigir la salida de error y se muestra la respuesta por terminal
+    https://askubuntu.com/questions/24953/using-grep-with-pipe-and-ampersand-to-filter-errors-from-find
+(8) BUmyYq5XxXGt -> seleccionando la terminal se ve la respuesta en negro
