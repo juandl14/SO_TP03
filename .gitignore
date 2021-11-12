@@ -1,5 +1,8 @@
-#bash history
+#History
 .bash_history
-
-#GDB
 .gdb_history
+.bashrc
+.vscode
+
+#Object files
+*.o
