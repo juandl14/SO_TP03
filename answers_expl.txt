@@ -1,4 +1,4 @@
-(0) netcat 127.0.0.1 8080
+(0) netcat 127.0.0.1 8080 -> mencionado en clase
 (1) entendido -> lo dice la consigna
 (2) itba -> https://medium.com/@jordanne_76409/how-the-wire-taught-me-encryption-131265bbc0c
 (3) M4GFKZ289aku -> paint: pintar el fondo

@@ -3,8 +3,11 @@
 .gdb_history
 .bashrc
 .vscode
+.DS_Store
 
 #Object files
 *.o
 
-.DS_Store
+# Executables
+client
+newServer
