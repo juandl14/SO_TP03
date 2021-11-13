@@ -21,3 +21,21 @@ Con esto tambien encontramos un easter egg en la linea 95:
 (9) u^v -> se escribe en latex y luego se resuelve integrando
 (10) chin_chu_lan_cha -> se escribe un programa quine.c (sacado de Wikipedia)
     https://es.wikipedia.org/wiki/Quine_(programa)
+
+----------------------------------------------------------------------------------------
+Nuevo easter egg corriendo con valgrind:
+==2665== Conditional jump or move depends on uninitialised value(s)
+==2665==    at 0x4014DC: V_E (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x4014FD: A_S (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x40151D: L__ (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x40153D: G_G (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x40155D: R_E (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x40157D: I_N (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x40159D: N_I (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x4015BD: D_A (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x4015DD: __L (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x400F7B: ??? (in /mnt/d/Documentos/Facu/SO/TP03/SO_TP03/server/server)
+==2665==    by 0x49C80B2: (below main) (libc-start.c:308)
+==2665==
+correr "valgrind ./server" -> valgrind es genial
+----------------------------------------------------------------------------------------
