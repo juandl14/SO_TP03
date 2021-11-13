@@ -1,9 +1,5 @@
 #include "newServer.h"
 
-void buildSocket(int * serverFd, int * optValue, int * clientFd, struct sockaddr_in * address, socklen_t addressLength);
-void endSocket(int serverFd, int clientFd);
-void startGame(int socketFd);
-
 
 int main () {
 
