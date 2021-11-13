@@ -9,4 +9,6 @@
 
 #define ERROR_CODE -1
 
+void errorHandler(const char *errorMsg);
+
 #endif

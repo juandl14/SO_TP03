@@ -19,7 +19,7 @@ int main () {
 
 void buildSocket(int * serverFd, int * optValue, int * clientFd, struct sockaddr_in * address, socklen_t addressLength) {
 
-    if ((serverFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR_CODE) {
+    if ((*serverFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR_CODE) {
         errorHandler("Error creating socket");
     }
 
@@ -31,7 +31,7 @@ void buildSocket(int * serverFd, int * optValue, int * clientFd, struct sockaddr
     address->sin_addr.s_addr = INADDR_ANY;
     address->sin_port = htons(MY_PORT);
 
-    if(bind(*serverFd, address, addressLength) == ERROR_CODE) {
+    if(bind(*serverFd, (struct sockaddr *) &address, addressLength) == ERROR_CODE) {
         errorHandler("Error binding socket");
     }
 
@@ -39,7 +39,7 @@ void buildSocket(int * serverFd, int * optValue, int * clientFd, struct sockaddr
         errorHandler("Error listening socket");
     }
 
-    if((*clientFd = accept(*serverFd, address, &addressLength)) == ERROR_CODE) {
+    if((*clientFd = accept(*serverFd, (struct sockaddr *) &address, &addressLength)) == ERROR_CODE) {
         errorHandler("Error accepting socket");
     }
 
