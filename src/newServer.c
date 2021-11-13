@@ -60,6 +60,10 @@ void startGame(int socketFd) {
     unsigned int currentLevel = 1;
     char * buffer = malloc(sizeof(char) * BUFFER_SIZE);
 
+    if(buffer == NULL) {
+        errorHandler("Error creating space for a buffer");
+    }
+
     while(currentLevel < MAX_LEVELS) {
         clearScreen();
         //TODO
