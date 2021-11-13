@@ -1,5 +1,4 @@
 #include "newServer.h"
-#include <sys/socket.h>
 
 int main () {
     struct sockaddr_in serverAddress;
@@ -9,7 +8,7 @@ int main () {
 
     setUpSocket(&serverSocketFd, &optValue, &clientSocketFd, &serverAddress, addressLength);
 
-    close(socketFd);
+    close(serverSocketFd);
     close(clientSocketFd);
 
     return 0;
@@ -17,14 +16,12 @@ int main () {
 
 void setUpSocket(int * serverFd, int * optValue, int * clientFd, struct sockaddr_in * address, unsigned int addressLength) {
 
-    if ((socketFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR_CODE) {
-        perror("Error creating socket");
-        exit(EXIT_FAILURE);
+    if ((serverFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR_CODE) {
+        errorHandler("Error creating socket");
     }
 
     if(setsockopt(*serverFd, SOL_SOCKET, SO_REUSEADDR, optValue, sizeof(*optValue)) == ERROR_CODE) {
-        perror("Error setting socket opt");
-        exit(EXIT_FAILURE);
+        errorHandler("Error setting socket opt");
     }
 
     address->sin_family = AF_INET;
@@ -39,6 +36,6 @@ void setUpSocket(int * serverFd, int * optValue, int * clientFd, struct sockaddr
 
     }
 
-    return socketFd;
+    return serverFd;
 }
 
