@@ -18,3 +18,6 @@ Con esto tambien encontramos un easter egg en la linea 95:
 (7) K5n2UFfpFMUN -> correr "./server 2> filtererror.txt" para redirigir la salida de error y se muestra la respuesta por terminal
     https://askubuntu.com/questions/24953/using-grep-with-pipe-and-ampersand-to-filter-errors-from-find
 (8) BUmyYq5XxXGt -> seleccionando la terminal se ve la respuesta en negro
+(9) u^v -> se escribe en latex y luego se resuelve integrando
+(10) chin_chu_lan_cha -> se escribe un programa quine.c (sacado de Wikipedia)
+    https://es.wikipedia.org/wiki/Quine_(programa)
