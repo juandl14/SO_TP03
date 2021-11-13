@@ -57,5 +57,21 @@ void endSocket(int serverFd, int clientFd) {
 }
 
 void startGame(int socketFd) {
-    printf("Building game in process");
+    unsigned int currentLevel = 1;
+    char * buffer = malloc(sizeof(char) * BUFFER_SIZE);
+
+    while(currentLevel < MAX_LEVELS) {
+        clearScreen();
+        //TODO
+        printf("----- CHALLENGE ----------\n");
+        printf("----- PISTA --------------\n");
+    }
+
+    clearScreen();
+    printf("----- GAME OVER ----------\n");
+    free(buffer);
+}
+
+void clearScreen() {
+    printf("\033[1;1H\033[2J");
 }
