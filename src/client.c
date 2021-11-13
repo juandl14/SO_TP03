@@ -1,7 +1,5 @@
 #include "client.h"
 
-#define ERROR_CODE -1
-
 int main(int argc, const char *argv[]) {
     struct sockaddr_in serv_addr;
     int socketFd = 0;
