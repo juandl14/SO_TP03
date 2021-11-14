@@ -133,10 +133,6 @@ static void endSocket(int serverFd, int clientFd) {
     if(close(serverFd) == ERROR_CODE) {
         errorHandler("Error closing socket");
     }
-
-    if(close(clientFd) == ERROR_CODE) {
-        errorHandler("Error closing socket");
-    }
 }
 
 static void startGame(int socketFd) {
