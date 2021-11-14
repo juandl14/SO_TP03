@@ -14,7 +14,7 @@ SERVER_EXEC= newServer
 CLIENT_EXEC= client
 
 all: $(OBJECT_CHALLENGES) client
-		$(GCC) $(GCCFLAGS) $(SOURCES_SERVER) $(SOURCES_CLIENT) $(SOURCES_CHALLENGES) $(SOURCES_LIB) -I./include -o $(SERVER_EXEC) $(GCCLIBS)
+		$(GCC) $(GCCFLAGS) $(SOURCES_SERVER) $(SOURCES_CHALLENGES) $(SOURCES_LIB) -I./include -o $(SERVER_EXEC) $(GCCLIBS)
 
 %.o: %.c
 		$(GCC) $(GCCFLAGS) -I./include -c $^ $(GCCLIBS)
@@ -27,7 +27,7 @@ client:
 		$(GCC) -I./include $(SOURCES_CLIENT) $(SOURCES_LIB) -o $(CLIENT_EXEC) $(GCCFLAGS)
 
 clean:
-		rm -rf *.o newServer client
+		rm -rf *.o newServer client ./src/*.o
 
 cleanTest:
 		rm -rf output.cppOut report.tasks results.valgrind

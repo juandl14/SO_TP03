@@ -3,8 +3,9 @@
 
 #include <lib.h>
 
-#define CHALLENGE_HEADER "------------- DESAFIO -------------"
-#define EXTRA_QUESTION_HEADER "----- PREGUNTA PARA INVESTIGAR -----"
+#define CHALLENGE_HEADER "----- CHALLENGE ----------"
+#define EXTRA_QUESTION_HEADER "----- EXTRA --------------"
+#define END_GAME "----- GAME OVER ----------"
 #define MAX_LEVELS 12
 
 typedef struct Challenge {
@@ -14,10 +15,11 @@ typedef struct Challenge {
     void (*func)(void);
 } Challenge;
 
-void genericChallenge();
 void badFileDescriptorChallenge();
 void filterErrorChallenge();
 void questionChallenge();
 void quineChallenge();
+void gdbmeChallenge();
+void randChallenge();
 
 #endif

@@ -39,3 +39,5 @@ Nuevo easter egg corriendo con valgrind:
 ==2665==
 correr "valgrind ./server" -> valgrind es genial
 ----------------------------------------------------------------------------------------
+(11) gdb_rules -> se llega con gdb poniendo breakpoint en gdbme y "saltandose" los kills
+(12) normal -> exportando los datos a un excel y graficandolos se observa una campana de Gauss, es decir una distribucion normal

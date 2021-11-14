@@ -1,9 +1,6 @@
 #include <challenges.h>
 
-// TODO: this function
-void genericChallenge() {
-
-}
+static void gdbme();
 
 // 4th challenge
 void badFileDescriptorChallenge() {
@@ -14,7 +11,20 @@ void badFileDescriptorChallenge() {
 // TODO: this function
 // 7th challenge
 void filterErrorChallenge() {
+    char *answer = "La respuesta es K5n2UFfpFMUN";
+    int len = strlen(answer);
+    putchar('\n');
 
+    for(int i = 0; i < len; i++) {
+        printf("%c", answer[i]);
+        for(int j = 0; j < (rand() % (20 - 6 + 1)) + 6; j++) {
+            char c = (rand() % (122 - 65 + 1)) + 65;
+            char aux[2] = {c, 0};
+            write(STDERR, aux, 1);
+        }
+    }
+
+    putchar('\n');
 }
 
 // 8th challenge
@@ -40,4 +50,26 @@ void quineChallenge() {
     } else {
         printf("\n\nENTER para reintentar.\n");
     }
+}
+
+// 11th challenge
+void gdbmeChallenge() {
+    gdbme();
+}
+
+// 12th challenge
+void randChallenge() {
+    double x, y, num;
+    for(int i = 0; i < 1000; i++) {
+        x = rand() / ((double) RAND_MAX + 1);
+        y = rand() / ((double) RAND_MAX + 1);
+        num = sqrt(-2 * log(x)) * cos(2* M_PI * y);
+        printf("%.6f ", num);
+    }
+    putchar('\n');
+}
+
+static void gdbme() {
+    if(getpid() == 0x12345678)
+        printf("La respuesta es gdb_rules\n\n");
 }

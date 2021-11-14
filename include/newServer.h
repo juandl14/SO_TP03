@@ -5,7 +5,7 @@
 #include <challenges.h>
 
 #define BACKLOG 10
-
+#define GENERIC_CHALLENGE NULL
 #define BUFFER_SIZE 100
 
 #endif
