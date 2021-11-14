@@ -170,6 +170,7 @@ static void startGame(int socketFd) {
 
     clearScreen();
     printf("%s\n", END_GAME);
+    printf("%s\n\n", CONGRATS);
     fclose(socketFile);
     free(buffer);
 }

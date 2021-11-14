@@ -35,7 +35,7 @@ int main(int argc, const char *argv[]) {
 
     struct sockaddr_in serv_addr;
     socklen_t addrLength = sizeof(serv_addr);
-    
+
     if ((socketFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR_CODE) {
         errorHandler("Error creating socket");
     }
@@ -53,12 +53,11 @@ int main(int argc, const char *argv[]) {
 
     printf("Succesful connection!\n");
 
-    if (argc == 1) {
-        solveManually();
-    } else {
+    if (argc != 1) {
         solveAutomatically(atoi(argv[1]));
     }
 
+    solveManually();
     close(socketFd);
     
 }
@@ -68,8 +67,8 @@ static void solveManually() {
     char buffer[MAX_BUFFER];
     memset(buffer, 0, MAX_BUFFER);
 
-    printf("Enter your answer: ");
-
+    printf("Inserte su respuesta: ");
+    
     while (fgets(buffer, MAX_BUFFER - 1, stdin) != NULL) {
 
         if (send(socketFd, buffer, strlen(buffer), 0) == ERROR_CODE) {
@@ -77,8 +76,7 @@ static void solveManually() {
         }
 
         memset(buffer, 0, MAX_BUFFER);
-
-        printf("Enter your next answer: ");
+        printf("Inserte su respuesta: ");
     }
 }
 
