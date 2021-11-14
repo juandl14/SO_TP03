@@ -1,5 +1,7 @@
 #include <newServer.h>
 
+__attribute__((section(".RUN_ME")))
+
 static void buildSocket(int *, int *, int *, struct sockaddr_in *, socklen_t );
 static void endSocket(int, int);
 static void startGame(int);
@@ -32,13 +34,13 @@ static Challenge challengeArray[] = {
         badFileDescriptorChallenge
     },
     {
-        "respuesta = strings:277\n\n\n",
+        "respuesta = strings:80\n\n\n",
         "too_easy\n",
         "¿Cómo garantiza TCP que los paquetes llegan en orden y no se pierden?\n\n",
         GENERIC_CHALLENGE
     },
     {
-        ".data .bss .comment ? .shstrtab .symtab .strtab\n\n\n",
+        ".plt.sec .text ? .fini .rodata\n\n\n",
         ".RUN_ME\n",
         "Un servidor suele crear un nuevo proceso o thread para atender las conexiones entrantes. ¿Qué conviene más?\n\n",
         GENERIC_CHALLENGE
@@ -90,7 +92,7 @@ int main () {
     int optValue = 1;
     
     buildSocket(&serverSocketFd, &optValue, &clientSocketFd, &serverAddress, addressLength);
-    printf("Llegue\n");
+
     startGame(clientSocketFd);
 
     endSocket(serverSocketFd, clientSocketFd);
@@ -123,7 +125,7 @@ static void buildSocket(int * serverFd, int * optValue, int * clientFd, struct s
     if((*clientFd = accept(*serverFd, (struct sockaddr *) address, &addressLength)) == ERROR_CODE) {
         errorHandler("Error accepting socket");
     }
-printf("Llegue a aceptar\n");
+
     return;
 }
 

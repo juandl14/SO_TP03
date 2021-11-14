@@ -5,10 +5,9 @@ static void gdbme();
 // 4th challenge
 void badFileDescriptorChallenge() {
     if(write(13, "La respuesta es fk3wfLCm3QvS\n", 30) == ERROR_CODE)
-        perror("write in fd 13 failed");
+        perror("write");
 }
 
-// TODO: this function
 // 7th challenge
 void filterErrorChallenge() {
     char *answer = "La respuesta es K5n2UFfpFMUN";
@@ -16,11 +15,12 @@ void filterErrorChallenge() {
     putchar('\n');
 
     for(int i = 0; i < len; i++) {
-        printf("%c", answer[i]);
+        char aux1[2] = {answer[i], 0};
+        write(1, aux1, 1);
         for(int j = 0; j < (rand() % (20 - 6 + 1)) + 6; j++) {
             char c = (rand() % (122 - 65 + 1)) + 65;
-            char aux[2] = {c, 0};
-            write(STDERR, aux, 1);
+            char aux2[2] = {c, 0};
+            write(STDERR, aux2, 1);
         }
     }
 
