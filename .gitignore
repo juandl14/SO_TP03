@@ -4,6 +4,7 @@
 .bashrc
 .vscode
 .DS_Store
+.lsshst
 
 #Object files
 *.o
