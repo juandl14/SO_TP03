@@ -10,6 +10,7 @@
 #include <unistd.h>
 
 #define ERROR_CODE -1
+#define VALID 0
 #define MY_ADDR "127.0.0.1"
 #define MY_PORT 8080
 

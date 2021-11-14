@@ -33,8 +33,14 @@ static Challenge challengeArray[] = {
         "M4GFKZ289aku\n",
         "¿El puerto que usaron para conectarse al server es el mismo que usan para mandar las respuestas? ¿Por qué?\n\n",
         genericChallenge
+    },
+    {
+        "EBADF... \n",
+        "fk3wfLCm3QvS\n",
+        "¿Qué útil abstracción es utilizada para comunicarse con sockets? ¿se puede utilizar read(2) y write(2) para operar?",
+        badFileDescriptorChallenge
     }
-}
+};
 
 int main () {
 

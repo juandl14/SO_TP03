@@ -14,4 +14,10 @@ typedef struct Challenge {
     void (*func)(void);
 } Challenge;
 
+void genericChallenge();
+void badFileDescriptorChallenge();
+void filterErrorChallenge();
+void questionChallenge();
+void quineChallenge();
+
 #endif
