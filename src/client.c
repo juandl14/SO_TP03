@@ -34,7 +34,8 @@ int main(int argc, const char *argv[]) {
     }
 
     struct sockaddr_in serv_addr;
-
+    socklen_t addrLength = sizeof(serv_addr);
+    
     if ((socketFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR_CODE) {
         errorHandler("Error creating socket");
     }
@@ -46,7 +47,7 @@ int main(int argc, const char *argv[]) {
         errorHandler("Invalid address");
     }
 
-    if (connect(socketFd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == ERROR_CODE) {
+    if (connect(socketFd, (struct sockaddr *)&serv_addr, addrLength) == ERROR_CODE) {
         errorHandler("Connection failed");
     }
 
