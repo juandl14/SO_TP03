@@ -29,10 +29,4 @@ client:
 clean:
 		rm -rf *.o newServer client ./src/*.o
 
-cleanTest:
-		rm -rf output.cppOut report.tasks results.valgrind
-
-test: clean
-		./pvs.sh; cppcheck --quiet --enable=all --force --suppress=missingIncludeSystem --inconclusive $(SOURCES_SERVER) $(SOURCES_CHALLENGES) $(SOURCES_CHALLENGES) $(SOURCES_LIB) 2>> output.cppOut; valgrind --leak-check=full -v ./newServer 2>> results.valgrind; valgrind --leak-check=full -v ./client 2>> results.valgrind
-
-.PHONY: all clean cleanTest test client
+.PHONY: all clean client
