@@ -51,7 +51,7 @@ int main(int argc, const char *argv[]) {
         errorHandler("Connection failed");
     }
 
-    printf("Succesful connection!\n");
+    printf("Conexión exitosa!\n");
 
     if (argc != 1) {
         solveAutomatically(atoi(argv[1]));
