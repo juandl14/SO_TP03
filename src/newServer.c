@@ -34,13 +34,13 @@ static Challenge challengeArray[] = {
         badFileDescriptorChallenge
     },
     {
-        "respuesta = strings:80\n\n\n",
+        "respuesta = strings:72\n\n\n",
         "too_easy\n",
         "¿Cómo garantiza TCP que los paquetes llegan en orden y no se pierden?\n\n",
         GENERIC_CHALLENGE
     },
     {
-        ".plt.sec .text ? .fini .rodata\n\n\n",
+        ".plt .text ? .fini .rodata\n\n\n",
         ".RUN_ME\n",
         "Un servidor suele crear un nuevo proceso o thread para atender las conexiones entrantes. ¿Qué conviene más?\n\n",
         GENERIC_CHALLENGE
