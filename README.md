@@ -37,7 +37,7 @@ Alternativamente, el client ofrece la opción de resolver hasta el desafío dese
 ```
 $ ./client <NUMBER>
 ```
-Así, se resolverá hasta el desafío indicado por <NUMBER>. De esta manera, si se corre:
+Así, se resolverá hasta el desafío indicado por _NUMBER_. De esta manera, si se corre:
 ```
 $ ./client 12
 ```
